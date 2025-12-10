@@ -1,4 +1,4 @@
-# SCP-049 Attacker AI
+# 🧟 Project 1 – SCP-049 Attacker AI
 
 ## 🖼️ Preview
 
