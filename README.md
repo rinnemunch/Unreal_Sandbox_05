@@ -122,3 +122,92 @@ A fully functional attacker AI inspired by SCP-049:
 - Optional wandering zombies for immersive worldbuilding
 
 Press Play and watch SCP-049 stalk the player with deliberate, eerie precision.
+
+---
+
+# 😇 Project 2 - Golden Halo Aura (Niagara)
+
+## 🖼️ Preview
+
+![HaloAura](Media/2.gif)
+
+## 🧱 Features
+
+### Post-Process Setup
+
+- **Bloom**
+  - Method set to **Convolution**
+  - Intensity set to **4**
+- **Exposure**
+  - Metering Mode set to **Manual**
+  - Exposure Compensation set to **1**
+  - Physical Camera Exposure disabled
+- **Optional Scene Boost**
+  - **ExponentialHeightFog** → Fog Density **1.0**
+  - **Directional Light** → Intensity **1.0 lux**
+
+---
+
+### Halo Material (M_Halo)
+
+- **Translucent Material**
+  - Receives particle color via **Particle Color**
+  - Supports emissive control via **Dynamic Parameter** renamed to **Emissive Color**
+- **Emissive Setup**
+  - Multiply node combining Particle Color and Emissive parameter
+- **Diamond Mask**
+  - **Diamond Gradient** with falloff constant set to **10**
+  - **Power** node for mask shaping
+- **Opacity**
+  - Multiply of Particle Alpha × Diamond Mask output
+
+---
+
+### Niagara System (NS_Halo)
+
+- **Renderer**
+  - Sprite Renderer using **M_Halo**
+- **Bounds & Local Space**
+  - Fixed bounds: **Min -1000** / **Max +1000**
+  - Local Space enabled
+- **Spawn & Lifetime**
+  - Spawn Rate set to **75**
+  - Lifetime range **1.5–2.5**
+- **Sprite Size**
+  - Uniform Size **40–50**
+- **Dynamic Material Params**
+  - EmissiveColor set to **50**
+- **Shape**
+  - Torus shape
+    - Large Radius **40**
+    - Handle Radius **6**
+- **Motion**
+  - Velocity From Point → **50**
+  - Rotational Velocity → **5** on all axes
+  - Gravity removed
+- **Color**
+  - Random Range Linear Color
+    - Min **(1, 0.4, 0)**
+    - Max **(3, 2, 0.5)**
+- **Scale Sprite Size**
+  - Auto-smoothed curve
+
+---
+
+### Character Integration
+
+- **Add Component**
+  - Niagara System Component named **Halo**
+  - System Asset: **NS_Halo**
+- **Attach to Mesh**
+  - Socket: **head**
+- **Transform Adjustments**
+  - Location: **X 29**
+  - Rotation: **Y –90**
+  - Scale: **0.2 / 0.2 / 0.2**
+
+---
+
+## 🚀 Result
+
+A clean, stylized golden halo aura that glows naturally with bloom, rotates gently, and attaches seamlessly to any character. Ideal for RPG buffs, magical effects, or ambient character auras.
