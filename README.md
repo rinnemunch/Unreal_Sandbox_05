@@ -211,3 +211,77 @@ Press Play and watch SCP-049 stalk the player with deliberate, eerie precision.
 ## 🚀 Result
 
 A clean, stylized golden halo aura that glows naturally with bloom, rotates gently, and attaches seamlessly to any character. Ideal for RPG buffs, magical effects, or ambient character auras.
+
+---
+
+# 👣 Project 3 – Synced Footstep Audio System (UE5)
+
+## 🖼️ Preview
+
+![Footsteps](Media/3.gif)
+
+## 🧱 Features
+
+### **Audio Asset Setup**
+
+- **Footstep Sound Pack**
+  - Five unique footstep wave files
+  - Imported directly into the Content directory
+  - Reusable across characters and projects
+- **Clean Content Organization**
+  - Dedicated **Footsteps** folder
+  - Centralized audio assets for easy expansion
+
+---
+
+### **Footstep Sound Cue (SC_Footsteps)**
+
+- **Randomized Playback**
+  - Random node selects from five footstep sounds
+  - Prevents repetitive audio patterns
+- **Natural Variation**
+  - Modulator node adds pitch variation
+  - Modulator node adds volume variation
+- **Reusable Design**
+  - Single Sound Cue drives all footstep events
+  - Drop-in solution for any animation or character
+
+---
+
+### **Animation Notify System**
+
+- **Run Animation Integration**
+  - Uses `MF_Run_Fwd` from the Quinn animation set
+  - Works directly with the Third Person Template
+- **Precise Footstep Timing**
+  - Play Sound notifies placed at exact foot impact frames
+  - Matches existing left/right foot timing markers
+- **Animation-Driven Audio**
+  - Footsteps trigger only when feet contact the ground
+  - Fully synced with animation playback
+
+---
+
+### **Beginner-Friendly Workflow**
+
+- **No C++ Required**
+  - Blueprint-only implementation
+- **No Complex Audio Systems**
+  - No MetaSounds or advanced audio routing
+- **Expandable Foundation**
+  - Easy to add surface types, materials, or context logic later
+
+---
+
+## 🚀 Result
+
+A clean, reliable footstep audio system that brings the Third Person Character to life:
+
+- Perfectly synced footstep sounds
+- Natural variation with randomized playback
+- Simple Sound Cue–driven workflow
+- Fully animation-based timing
+
+Press Play and instantly feel grounded character movement with responsive, professional-quality footstep audio.
+
+---
