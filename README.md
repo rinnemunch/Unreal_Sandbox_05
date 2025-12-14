@@ -361,4 +361,32 @@ Press Play and instantly feel grounded character movement with responsive, profe
   - Returns grounded state
 - **Downward Movement Lock**
   - Prevents climbing downward when already on ground
-  - Eliminates ji
+- Eliminates jitter and unwanted sinking
+- **Clean Exit Behavior**
+  - Player can smoothly walk away at ladder base
+
+---
+
+### **Input Routing Logic**
+
+- **Branch-Based Switching**
+  - Normal movement when not climbing
+  - Climb movement when climbing
+- **Boolean Inversion Logic**
+  - Ensures walking and climbing never conflict
+- **Seamless Transition**
+  - No snapping, teleporting, or forced alignment
+
+---
+
+## 🚀 Result
+
+A clean, reusable first-person ladder climbing system:
+
+- Collision-triggered climbing
+- Gravity-free vertical movement
+- Shared movement input logic
+- Ground-safe exit handling
+- Works with any ladder mesh or level layout
+
+Drop ladders anywhere, press Play, and climb naturally from any angle with responsive, production-ready behavior.
