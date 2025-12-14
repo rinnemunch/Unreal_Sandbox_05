@@ -285,3 +285,80 @@ A clean, reliable footstep audio system that brings the Third Person Character t
 Press Play and instantly feel grounded character movement with responsive, professional-quality footstep audio.
 
 ---
+
+# 🪜 Project 4 – First Person Ladder Climbing System
+
+## 🖼️ Preview
+
+![LadderClimb](Media/4.gif)
+
+## 🧱 Features
+
+### **Ladder Actor Setup**
+
+- **BP_Ladder Blueprint**
+  - Actor-based ladder system reusable across levels
+  - Works with any ladder mesh or simple placeholder geometry
+- **Static Mesh Component**
+  - Ladder mesh assigned directly in Blueprint
+  - Scalable to fit different ladder sizes
+- **Box Collision Trigger**
+  - Tall collision volume covering full ladder height
+  - Offset vertically to ensure consistent overlap detection
+  - Debug-visible during testing via **Hidden in Game** toggle
+
+---
+
+### **Overlap-Driven Climb Control**
+
+- **Begin / End Overlap Events**
+  - Detects player entering and exiting ladder zone
+- **Player Casting**
+  - Casts to `BP_FirstPersonCharacter`
+- **Climb Event Calls**
+  - Begin Overlap → `Climb(true)`
+  - End Overlap → `Climb(false)`
+- **Automatic State Handling**
+  - No input toggles or manual activation required
+
+---
+
+### **Climb State System**
+
+- **Climb Custom Event**
+  - Boolean input `IsClimbing`
+  - Promoted to internal state variable
+- **Movement Mode Switching**
+  - **Flying** mode while climbing
+    - Disables gravity
+    - Enables vertical movement
+  - **Walking** mode when exiting ladder
+- **Braking Control**
+  - Custom Flying braking deceleration
+  - Prevents floaty movement when releasing input
+
+---
+
+### **Climb Movement Input Logic**
+
+- **UpdateClimbMovement Event**
+  - Float inputs `X` and `Y`
+- **Vector-Based Movement**
+  - Forward Vector × X input
+  - Up Vector × Y input
+- **Orientation-Aware Control**
+  - Respects actor rotation for consistent movement
+- **Shared Input System**
+  - Reuses existing Enhanced Input movement action
+  - No duplicate input mappings required
+
+---
+
+### **Ground Detection Safety**
+
+- **Grounded Function**
+  - Line trace downward from player
+  - Returns grounded state
+- **Downward Movement Lock**
+  - Prevents climbing downward when already on ground
+  - Eliminates ji
