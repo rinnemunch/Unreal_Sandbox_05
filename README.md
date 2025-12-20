@@ -390,3 +390,60 @@ A clean, reusable first-person ladder climbing system:
 - Works with any ladder mesh or level layout
 
 Drop ladders anywhere, press Play, and climb naturally from any angle with responsive, production-ready behavior.
+
+# Project 5 – Chaos Vehicles Landscape Obstacle Course
+
+## 🖼️ Preview
+
+![Chaos Vehicles Landscape Obstacle Course](Media/5.gif)
+
+## 🧱 Features
+
+**Chaos Vehicle Pawn Setup**
+
+- Wheeled Vehicle Pawn configured using Chaos Vehicles
+- Six-wheel vehicle support with custom front and rear wheel blueprints
+- Tuned mass and center of mass override for improved stability
+- Vehicle animation blueprint driving wheel rotation and steering
+
+**Camera System**
+
+- Spring Arm–based camera rig with adjustable offsets
+- First-person and third-person camera components
+- Runtime camera toggle input for switching perspectives
+- Mouse and controller camera rotation using Enhanced Input
+- Optional camera lag for smoother terrain traversal
+
+**Input Framework**
+
+- Enhanced Input Mapping Context dedicated to vehicle controls
+- Keyboard and controller support for all driving actions
+- Throttle, reverse, steering, braking, and handbrake inputs
+- Deadzone handling to prevent controller drift
+
+**Engine and Audio**
+
+- Chaos engine configuration with custom torque curve
+- Engine idle and max torque tuning for terrain driving
+- MetaSound-based engine audio
+- Dynamic pitch adjustment based on vehicle ground speed
+- Handbrake sound feedback on activation
+
+**Landscape Obstacle Course**
+
+- Custom landscape created from a blank level
+- Sculpted terrain for elevation changes and slopes
+- Ramp-based obstacle sections for jump and incline testing
+- Noise-based terrain for rough suspension and traction stress tests
+- Text Render Actors used to label each obstacle section
+
+**Visual Reset System**
+
+- Niagara fountain effects used as reset point markers
+- Dedicated reset actor placed between markers
+- Manual reset input to instantly teleport the vehicle
+- Optional Player Start aligned with reset location for consistent spawns
+
+## 🚀 Result
+
+This project provides a reusable Chaos Vehicle testing environment designed for hands-on experimentation. With varied terrain, flexible camera controls, and a fast reset workflow, it allows you to observe vehicle handling, suspension behavior, and physics response under realistic conditions—without restarting levels or guessing outcomes. Perfect as a foundation for off-road, open-world, or simulation-focused vehicle systems.
