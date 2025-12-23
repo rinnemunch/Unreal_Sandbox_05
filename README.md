@@ -1,3 +1,17 @@
+# 🧩 Unreal Engine Blueprint Showcase
+
+A collection of all my **Unreal Engine 5.5.4** mini-projects — built from scratch, one system at a time.
+Each project focuses on a specific gameplay or visual mechanic, designed to teach, inspire, and evolve into larger systems later on.
+
+---
+
+## 🎞️ Project Gallery
+
+![Project Showcase](Media/AllProjects.gif)
+
+Explore the full breakdowns below 👇
+Each project includes its **Blueprint setup**, **preview GIF**, and a short **feature list** for quick reference.
+
 # 🧟 Project 1 – SCP-049 Attacker AI
 
 ## 🖼️ Preview
