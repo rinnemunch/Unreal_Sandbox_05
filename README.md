@@ -447,3 +447,49 @@ Drop ladders anywhere, press Play, and climb naturally from any angle with respo
 ## 🚀 Result
 
 This project provides a reusable Chaos Vehicle testing environment designed for hands-on experimentation. With varied terrain, flexible camera controls, and a fast reset workflow, it allows you to observe vehicle handling, suspension behavior, and physics response under realistic conditions—without restarting levels or guessing outcomes. Perfect as a foundation for off-road, open-world, or simulation-focused vehicle systems.
+
+---
+
+# Project 6 – Stopwatch UI with Visual Warning
+
+## 🖼️ Preview
+
+![Stopwatch UI](Media/6.gif)
+
+## 🧱 Features
+
+**Stopwatch Widget (UMG)**
+
+- Custom **WBP_Stopwatch** widget created under User Interface
+- Text element anchored to screen corner for consistent positioning
+- Large font size with outline enabled for readability
+- **Size to Content** enabled to allow dynamic resizing as time updates
+
+**Time Tracking Logic**
+
+- Stopwatch time tracked using **Delta Seconds** for real-world accuracy
+- Float variable accumulates elapsed time every frame
+- Logic driven by a custom event called from **Event Tick**
+
+**Warning Threshold System**
+
+- Configurable **WarningSeconds** float variable
+- Comparison checks when elapsed time meets or exceeds the threshold
+- Boolean gate ensures the warning triggers only once
+- Prevents flickering or repeated state changes
+
+**Visual Feedback**
+
+- Stopwatch text color changes when warning time is passed
+- Color update handled directly in Blueprint logic
+- State locked after trigger for stable UI behavior
+
+**Viewport Integration**
+
+- Widget created on **Begin Play** from the Character Blueprint
+- Added to viewport at runtime with no template dependency
+- Fully reusable in any Unreal Engine project
+
+## 🚀 Result
+
+This project demonstrates how a small UI system can reinforce core Unreal Engine concepts like time flow, Tick-based updates, state management, and intentional UI control. The stopwatch remains simple, but the patterns used here scale cleanly into larger UI-driven systems, making it an ideal foundational example for Blueprint-based interface logic.
